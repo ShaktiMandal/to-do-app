@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">TO DO</a>
+        </div>
+        <div class="collpase navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a routerLink="/Add" (click)="OnAddTask('AddTask')" class="nav-link"> Add Task </a> </li>
+                <li class="nav-item">
+                    <a  routerLink="/Edit" class="nav-link" (click)="OnEditTask('EditTask')">Edit Task</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

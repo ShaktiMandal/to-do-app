@@ -1,0 +1,25 @@
+.submit-button
+{
+    outline: none;
+    border: 1px solid lightgray;
+    color: black;
+    background-color: transparent;
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.submit-button:hover
+{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+textarea:focus::placeholder {
+    color: transparent;;
+}
+
+input:focus::placeholder {
+    color: transparent;;
+}

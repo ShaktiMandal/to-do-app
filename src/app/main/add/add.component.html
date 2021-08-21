@@ -1,0 +1,81 @@
+<section class="Form my-5">
+    <div class="container">
+                <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <label class="my-1"> Task Header </label>
+                            <input 
+                            ngModel
+                            type="text"                         
+                            placeholder="Enter task header" 
+                            class="form-control my-2"
+                            #headerInput= "ngModel"
+                            formControlName="taskHeader"                           
+                            >
+                        </div>                        
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <label class="my-1"> Description </label>
+                            <textarea 
+                            ngModel
+                            type="text" 
+                            #descriptionInput = "ngModel"
+                            formControlName="taskDescription"
+                            placeholder="Enter task description" 
+                            class="form-control my-2"></textarea>
+                        </div>                        
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <label class="my-1"> Start Date</label>
+                            <input type="date"  
+                            ngModel
+                            #startDateInput = "ngModel"
+                            formControlName="startDate"
+                            class="form-control my-2">
+                        </div>                        
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <label class="my-1"> End Date </label>
+                            <input type="date" 
+                            ngModel 
+                            class="form-control my-2"
+                            #endDateInput = "ngModel"
+                            formControlName="endDate"
+                            >
+                        </div>                        
+                    </div>
+                    <div class="form-row">
+                        <span>Type Of Task</span>
+                        <select
+                        #selectedType = "ngModel"
+                        class="form-control my-2" formControlName="taskType">
+                            <option>Hobby</option>
+                            <option>Perosnal</option>
+                            <option>Professional</option>
+                        </select>
+                        
+                        <!-- <div class="col-lg-7">
+                            <input type="text" placeholder="" class="form-control my-2">
+                        </div>                         -->
+                        <!-- <div class="d-inline-block" ngbDropdown>
+                            <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor >Select Task Status</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                              <button >In Progress</button>
+                              <button ngbDropdownItem>Completed</button>  
+                              <button ngbDropdownItem>Yet To Start</button>                
+                            </div>
+                          </div> -->
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="submit" value="Add Task" class="submit-button my-2">
+                        </div>    
+                    </div>
+                </form>
+
+    </div>
+</section>

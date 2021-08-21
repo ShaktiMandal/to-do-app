@@ -1,0 +1,22 @@
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col">
+           {{TaskItem.TaskHeader}}
+        </div>
+        <div class="col-md-auto">
+            {{TaskItem.Description}}
+        </div>
+        <div class="col">
+            {{TaskItem.StartDate}}
+        </div>
+        <div class="col">
+            {{TaskItem.EndDate}}
+        </div> 
+        <div class="col">           
+            <button class="btn-primary" (click)="OnDelete(TaskItem.Id, 'Delete')" >Delete</button>
+        </div> 
+        <div class="col">
+            <button class="btn-primary" (click)="OnEditTask(TaskItem.Id, 'EditTask')">Edit</button>
+        </div> 
+    </div>
+</div>

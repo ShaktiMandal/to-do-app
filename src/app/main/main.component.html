@@ -1,0 +1,14 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-7">
+            <app-taskitems [TaskItems]= "listOfTasks" (TaskEditEvent) = "OnEditEvent($event)"></app-taskitems>
+        </div>
+        <div class="col-lg-5">
+            <app-add (AddTaskEvent) = "OnAddTask($event)" *ngIf="selectionType === 'AddTask' "></app-add>
+            <app-edit *ngIf="selectionType === 'EditTask'"></app-edit>
+        </div>
+    </div>
+</div>
+    
+
