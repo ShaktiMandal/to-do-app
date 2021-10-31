@@ -22,6 +22,29 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  onSubmit = (form: any) => {
+     
+
+      if(form.status === "INVALID" || form.touched === false)
+      {
+        alert("You have not entered details");
+        return;
+      }
+
+      const {headerInput, descriptionInput, startDateInput, EndDateInput, selectedType} = form.value;
+      var taskItem = {
+        Id: (Math.random() * 100).toString(),
+        TaskHeader: headerInput,
+        Description : descriptionInput,
+        StartDate: startDateInput,
+        EndDate: EndDateInput,
+        selectedType: selectedType
+      };
+
+      this.AddTaskEvent.emit(taskItem)
+  }
+
   OnAddTask = () => {
     var taskItem = {
       Id: (Math.random() * 100).toString(),

@@ -1,30 +1,42 @@
 <section class="Form  my-5">
     <div class="container">
        
-                <form>
+                <form #form="ngForm" (ngSubmit) = "onEdit(form)">
                     <div class="form-row">
                         <div class="col-lg-7">
                             <label class="my-1"> Task Header </label>
-                            <input type="text" placeholder="Enter task header" class="form-control my-2">
+                            <input type="text"
+                            name="headerInput"
+                            [(ngModel)] = "headerInput"                   
+                            placeholder="Enter task header" class="form-control my-2">
                         </div>                        
                     </div>
                     
                     <div class="form-row">
                         <div class="col-lg-7">
                             <label class="my-1"> Description </label>
-                            <textarea type="text" placeholder="Enter task description" class="form-control my-2"></textarea>
+                            <textarea type="text"
+                            name="descriptionInput" 
+                            [(ngModel)] = "descriptionInput"  
+                            placeholder="Enter task description" class="form-control my-2"></textarea>
                         </div>                        
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
                             <label class="my-1"> Start Date</label>
-                            <input type="date"  class="form-control my-2">
+                            <input type="date"                            
+                                name="startDateInput"
+                             [(ngModel)] = "startDateInput"
+                            class="form-control my-2">
                         </div>                        
                     </div>
                     <div class="form-row">
                         <div class="col-lg-7">
                             <label class="my-1"> End Date </label>
-                            <input type="date"  class="form-control my-2">
+                            <input type="date"  
+                                name="EndDateInput" 
+                            [(ngModel)] = "EndDateInput"
+                            class="form-control my-2">
                         </div>                        
                     </div>
                     <div class="form-row">
@@ -43,10 +55,7 @@
                     <div class="form-row">
                         <div class="col-lg-7">
                             <input type="button" value="Edit Task" class="submit-button my-2">
-                        </div>                        
-
-
-                       
+                        </div>   
                     </div>
                 </form>
 

@@ -4,13 +4,14 @@
                     <div class="form-row">
                         <div class="col-lg-7">
                             <label class="my-1"> Task Header </label>
-                            <input 
+                            <input
+                            required
                             ngModel
-                            type="text"                         
+                            type="text"    
+                            name="headerInput"                     
                             placeholder="Enter task header" 
                             class="form-control my-2"
-                            #headerInput= "ngModel"
-                            formControlName="taskHeader"                           
+                            #headerInput= "ngModel"                                              
                             >
                         </div>                        
                     </div>
@@ -20,9 +21,11 @@
                             <label class="my-1"> Description </label>
                             <textarea 
                             ngModel
+                            required
+                            maxlength="150"
                             type="text" 
+                            name="descriptionInput"
                             #descriptionInput = "ngModel"
-                            formControlName="taskDescription"
                             placeholder="Enter task description" 
                             class="form-control my-2"></textarea>
                         </div>                        
@@ -32,8 +35,9 @@
                             <label class="my-1"> Start Date</label>
                             <input type="date"  
                             ngModel
+                            required
+                            name="startDateInput"
                             #startDateInput = "ngModel"
-                            formControlName="startDate"
                             class="form-control my-2">
                         </div>                        
                     </div>
@@ -42,17 +46,20 @@
                             <label class="my-1"> End Date </label>
                             <input type="date" 
                             ngModel 
+                            required
+                            name="EndDateInput"
                             class="form-control my-2"
                             #endDateInput = "ngModel"
-                            formControlName="endDate"
                             >
                         </div>                        
                     </div>
                     <div class="form-row">
                         <span>Type Of Task</span>
                         <select
+                        ngModel
+                        name="selectedType"
                         #selectedType = "ngModel"
-                        class="form-control my-2" formControlName="taskType">
+                        class="form-control my-2" >
                             <option>Hobby</option>
                             <option>Perosnal</option>
                             <option>Professional</option>

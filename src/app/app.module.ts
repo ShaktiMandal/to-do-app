@@ -9,7 +9,8 @@ import { AddComponent } from './main/add/add.component';
 import { TaskitemsComponent } from './main/taskitems/taskitems.component';
 import { TaskitemComponent } from './main/taskitems/taskitem/taskitem.component';
 import { AppService } from './app.Service';
-import { Routes, RouterModule} from '@angular/router'
+import { Routes, RouterModule} from '@angular/router';
+import { FormsModule }   from '@angular/forms';
 
 const routePath: Routes = [
   {path: '', component : AppComponent},
@@ -29,6 +30,7 @@ const routePath: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(routePath)
   ],
   providers:[AppService],

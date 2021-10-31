@@ -23,3 +23,7 @@ textarea:focus::placeholder {
 input:focus::placeholder {
     color: transparent;;
 }
+
+.form-control.ng-touched.ng-invalid {
+    border: 2px solid red;
+  } 

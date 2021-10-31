@@ -6,7 +6,7 @@
         </div>
         <div class="col-lg-5">
             <app-add (AddTaskEvent) = "OnAddTask($event)" *ngIf="selectionType === 'AddTask' "></app-add>
-            <app-edit *ngIf="selectionType === 'EditTask'"></app-edit>
+            <app-edit [selectedTask] = "selectedTask" (EditTaskEvent) = "OnEdit($event)" *ngIf="selectionType === 'EditTask'"></app-edit>
         </div>
     </div>
 </div>
