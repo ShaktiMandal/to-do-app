@@ -11,6 +11,8 @@ import { TaskitemComponent } from './main/taskitems/taskitem/taskitem.component'
 import { AppService } from './app.Service';
 import { Routes, RouterModule} from '@angular/router';
 import { FormsModule }   from '@angular/forms';
+import { TooltipComponent } from './main/tooltip/tooltip.component';
+import { TooltipDirective } from './main/tooltip.directive';
 
 const routePath: Routes = [
   {path: '', component : AppComponent},
@@ -26,7 +28,9 @@ const routePath: Routes = [
     EditComponent,
     AddComponent,
     TaskitemsComponent,
-    TaskitemComponent
+    TaskitemComponent,
+    TooltipComponent,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,

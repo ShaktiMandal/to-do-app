@@ -1,0 +1,8 @@
+.tooltip
+{
+    border: 1px solid black;
+    color: white;
+    background: lightseagreen;
+    top: 10px;
+    left: 20px;
+}

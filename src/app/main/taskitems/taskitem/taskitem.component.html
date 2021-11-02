@@ -13,10 +13,10 @@
             {{TaskItem.EndDate}}
         </div> 
         <div class="col">           
-            <button class="btn-primary" (click)="OnDelete(TaskItem.Id, 'Delete')" >Delete</button>
+            <button appTooltip class="btn-primary" (click)="OnDelete(TaskItem.Id, 'Delete')" >Delete</button>
         </div> 
         <div class="col">
-            <button class="btn-primary" (click)="OnEditTask(TaskItem.Id, 'EditTask')">Edit</button>
+            <button appTooltip class="btn-primary" (click)="OnEditTask(TaskItem.Id, 'EditTask')">Edit</button>
         </div> 
     </div>
 </div>

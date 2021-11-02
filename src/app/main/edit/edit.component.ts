@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Output,EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-edit',
@@ -8,7 +8,7 @@ import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 export class EditComponent implements OnInit {
 
   @Input() selectedTask: {Id: string, TaskHeader: string, Description:string, StartDate: number, EndDate:number};
-  @Output() EditTaskEvent = new EventEmitter<{Id: string, headerInput: string, startDateInput: string, StartDate: number, EndDateInput:number}>();
+  @Output() EditTaskEvent = new EventEmitter<{Id: string, TaskHeader: string, Description:string, StartDate: number, EndDate:number}>();
   
   headerInput:string;
   descriptionInput: string;
@@ -18,6 +18,10 @@ export class EditComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  ngOnChanges() {
 
     this.headerInput = this.selectedTask.TaskHeader;
     this.descriptionInput = this.selectedTask.Description;
@@ -29,19 +33,21 @@ export class EditComponent implements OnInit {
       
       if(form.status === "INVALID" || form.touched === false)
       {
-        alert("You have not entered details");
+        alert("You have not edited details correctly");
         return;
       }
 
-      const {headerInput, descriptionInput, startDateInput, EndDateInput, selectedType} = form.value;
-      var taskItem = {
-        Id: (Math.random() * 100).toString(),
+      const {headerInput, descriptionInput, startDateInput, EndDateInput, selectedType} = form.value;    
+
+      this.EditTaskEvent.emit({
+        Id: this.selectedTask.Id,
         TaskHeader: headerInput,
         Description : descriptionInput,
         StartDate: startDateInput,
-        EndDate: EndDateInput,
-        selectedType: selectedType
-      };
+        EndDate: EndDateInput
+      });
+
+      form.reset();
   }
 
 }

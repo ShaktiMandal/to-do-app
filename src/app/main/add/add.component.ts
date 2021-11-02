@@ -41,7 +41,7 @@ export class AddComponent implements OnInit {
         EndDate: EndDateInput,
         selectedType: selectedType
       };
-
+      form.reset();
       this.AddTaskEvent.emit(taskItem)
   }
 
